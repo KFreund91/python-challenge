@@ -40,14 +40,10 @@ with open(budget_csv, 'r',newline = '') as csvfile:
     print(f"Greatest Increase in Profits: {month_increase} (${profit_increase})")
     print(f"Greatest Decrease in Profits: {month_decrease} (${profit_decrease})")
 
-   
-    file = open('output_pybank.txt','w') 
- 
-    file.write('Financial Analysis') 
-    file.write("Total Months:" + str(total_months)) 
-    file.write(f"Total: $ {str(total_pf)}") 
-    file.write(f"Average Change: $ {str(round(monthly_change, 2))}") 
-    file.write(f"Greatest Increase in Profits: {month_increase} (${profit_increase})")
-    file.write(f"Greatest Decrease in Profits: {month_decrease} (${profit_decrease})")
- 
-    file.close() 
+
+# Specify the file to write to
+output_path = os.path.join('..','python-challenge', 'output_pybank.txt')
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w') as text:
+
